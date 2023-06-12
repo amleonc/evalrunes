@@ -65,6 +65,10 @@ func ValidateRuneArrayLength(runes []rune, min, max int) bool {
 // matches any of the provided validator functions.
 
 func CompareAgainstValidators(runes []rune, validators ...func(rune) bool) bool {
+	if len(validators) < 1 {
+		return true
+	}
+
 	check := func(ctx context.Context, r rune, result chan bool) {
 		for _, fn := range validators {
 			if fn(r) {

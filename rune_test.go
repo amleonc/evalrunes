@@ -135,6 +135,14 @@ func TestCompareAgainstValidators(t *testing.T) {
 		want bool
 	}{
 		{
+			name: "No validators",
+			args: args{
+				runes:      []rune(alphanumericStr),
+				validators: nil,
+			},
+			want: true,
+		},
+		{
 			name: "Numeric string is alphanumeric",
 			args: args{
 				runes:      []rune(numericStr),
