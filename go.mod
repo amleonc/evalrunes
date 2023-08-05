@@ -1,3 +1,3 @@
-module github.com/amleonc/evalrunes
+module github.com/pof3/evalrunes
 
 go 1.20
